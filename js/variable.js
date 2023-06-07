@@ -11,7 +11,7 @@ let globalName = 'global var'
 
 
 // var hoisting -> var로 선언된 변수는 어디에 선언되있던지 항상 제일 위로 끌어 올려줌
-// var는 block을 철저하게 무시하는 변수임
+// var는 block을 철저하게 무시하는 변수
 a = 4;
 console.log(a)
 {
@@ -24,7 +24,7 @@ const b = 2
 
 // 데이터 타입, number, string, boolean, first-class function, object....
 
-// number, 별 다를건 없지만.. 몇가지 특별한 숫자의 값이 있음
+// number, 별 다를건 없지만.. 몇가지 특별한 숫자의 값이 있디
 const infinity = 1/0
 const negativeInfinity = -1 / 0
 const nAn = 'not a number' / 2
@@ -33,7 +33,7 @@ console.log(negativeInfinity)
 console.log(nAn)
 
 
-// string, 문자든 문자열이든 다 문자열
+// string, 문자든 문자열이든 다 문자열이다.
 
 // boolean
 // false: 0, null, undefuned, NaN, ''
@@ -66,5 +66,5 @@ console.log(`value ${text}, type: ${typeof text}`) // value 4, type: number
 
 const ellie = {name: 'ellie', age: 20}
 ellie.name = 'abcde'
-console.log(ellie.name)
+console.log(ellie.name) // abcde
 
