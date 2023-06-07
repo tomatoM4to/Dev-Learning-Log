@@ -28,38 +28,11 @@
             console.log() 란? console API 그중 log라는 함수, Node js에서도 같은 인터페이스를 사용하기에 같이 쓸수 있는것
         </li>
     </ul>
-    <h2>js를 html에 포함시키는 경우들</h2>
-    <p>
-        브라우저가 html을 다운받고 한줄한줄 파싱하여 dom요소로 변환할때 &lt;script&gt; 태그를 만날때 이루어 지는 과정들중 가장 효율적인 경우를 설명함
-    </p>
-    <ul>
+    <h2>강의 목록</h2>
+    <ol>
         <li>
-            <strong> head 태그에 script를 포함시키는 경우</strong>
-            <p>
-                script 를 만날시 파싱을 멈춘후 js를 fetching, executing 후 다시 파싱을 시도함 -> 단점 : html 파싱 전까지 사용자가 컨텐츠를 못보니 느림
-            </p>
+            <a href="jsInhtml.html">js를 html에 포함시키는 여러 방법들</a>
         </li>
-        <li>
-            <strong>body 태그 맨 밑에 script를 포함 시키는 경우</strong>
-            <p>
-                html을 파싱 한 후 js를 실행함 -> 단점 : 사용자가 html 컨텐츠는 일찍 보지만 js에 있는 의미있는 컨텐츠를 볼때까지 시간이 듬
-            </p>
-        </li>
-        <li>
-            <strong>head 태그에 script를 포함시키면서 async 옵션을 사용하는 경우</strong>
-            <p>
-                script를 만날시 다운로드와 파싱을 동시에 진행(병렬), 다운로드가 완료 될시 js를 실행함 -> 단점 : 아직 생성되지 않은 dom 요소를 접근할수 있는 위험이 있음, 그리고 여러 js 파일
-                a.js, b.js, c.js 같은 파일들을 script를 통해 포함할시, 작성자가 적은 순서가 아닌, 다운로드가 완료된 순서로 실행됨
-            </p>
-            <img src="img/dream%20coding%20script1.png">
-        </li>
-        <li>
-            <strong>head 태그에 script를 포함시키면서 defer 옵션을 사용하는 경우</strong>
-            <p>
-                script를 만날시 다운로드와 파싱을 동시에 진행(병렬), 파싱이 완료되서 dom이 생성되면 이후 a.js, b.js, c.js 순서로 실행됨 -> 가장 좋은 방법임
-            </p>
-            <img src="img/dream%20coding%20script2.png">
-        </li>
-    </ul>
+    </ol>
 </body>
 </html>
