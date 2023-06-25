@@ -16,7 +16,7 @@
 <strong>주요 특징</strong>
 <ul>
     <li>Promise 객체를 생성할 때는 실행자(executor)라는 함수를 인자로 전달한다. 이 함수는 resolve와 reject 두 개의 함수를 인자로 받는다. </li>
-    <li>Promise 객체를 생성하는 순간 실행자 함수가 실행되며, 그 안의 코드가 비동기로 동작한다.</li>
+    <li>Promise 객체를 생성할 때 실행자 함수는 즉시 실행되지만, 그 안의 코드가 비동기로 동작하는 것은 그 코드가 비동기 작업을 수행하는지에 따라 달라집니다.</li>
     <li>resolve나 reject 중 하나가 호출되면 Promise의 상태가 결정되며(fulfilled 또는 rejected), 이후에 다른 함수를 호출해도 Promise의 상태를 바꿀 수 없다. 즉, Promise는 한 번만 결정될 수 있다. 따라서 reject 함수를 먼저 호출한 경우, 그 이후에 resolve 함수를 호출하더라도 이는 무시된다.</li>
 </ul>
 
