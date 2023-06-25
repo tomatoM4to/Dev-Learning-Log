@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-    <a href="index.html">go home</a>
+    <a href="../index.html">go home</a>
     <h2>js를 html에 포함시키는 경우들</h2>
     <p>
         브라우저가 html을 다운받고 한줄한줄 파싱하여 dom요소로 변환할때 &lt;script&gt; 태그를 만날때 이루어 지는 과정들중 가장 효율적인 경우를 설명함
@@ -35,14 +35,14 @@
                 script를 만날시 다운로드와 파싱을 동시에 진행(병렬), 다운로드가 완료 될시 js를 실행함 -> 단점 : 아직 생성되지 않은 dom 요소를 접근할수 있는 위험이 있음, 그리고 여러 js 파일
                 a.js, b.js, c.js 같은 파일들을 script를 통해 포함할시, 작성자가 적은 순서가 아닌, 다운로드가 완료된 순서로 실행됨
             </p>
-            <img src="img/dream%20coding%20script1.png">
+            <img src="../img/dream%20coding%20script1.png">
         </li>
         <li>
             <strong>head 태그에 script를 포함시키면서 defer 옵션을 사용하는 경우</strong>
             <p>
                 script를 만날시 다운로드와 파싱을 동시에 진행(병렬), 파싱이 완료되서 dom이 생성되면 이후 a.js, b.js, c.js 순서로 실행됨 -> 가장 좋은 방법임
             </p>
-            <img src="img/dream%20coding%20script2.png">
+            <img src="../img/dream%20coding%20script2.png">
         </li>
     </ul>
 </body>
