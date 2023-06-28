@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 1.5rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row; /* 배치 방향 */
+            flex-wrap: wrap;
+            justify-content: space-around; /* 현재 축 방향 정렬 기준 결정 */
+            align-items: center; /* 축의 수직방향 정렬 결정 */
+            align-content: center; /* wrap인 상태에서 수직방향 정렬 결정 */
+
+            height: 100vh;
+            background: #aaaaaa;
+        }
+        .item {
+            flex-basis: 0; /* 아이탬의 점유하는 공간을 0으로 한다, 전체가 여백이니 완전한 1:1:1 가능 */
+            flex-grow: 1; /* 컨테이너의의 여백을 1:1:1로 나누어서 배치, 아이탬 각각에 적용도 가능 */
+            flex-shrink: 1; /* grouw가 늘어났을시 1:1:1 이라면 shrink는 줄어들었을때의 비율을 결정 */
+
+            /* 위의 basis: 0, grow: 1, shrink: 1 의 축약 */
+            /*flex: 1;*/
+
+            background: #aaffaa;
+        }
+        .item:nth-child(odd) {
+            background: chartreuse;
+        }
+
+        /*==========================================================================================================================*/
+        /*==========================================================================================================================*/
+        /*==========================================================================================================================*/
+        /*==========================================================================================================================*/
+        /*==========================================================================================================================*/
+
+        .layout {
+            display: flex;
+
+            flex-direction: row; /* 배치 방향 */
+            flex-wrap: wrap;
+            align-content: center; /* wrap인 상태에서 수직방향 정렬 결정 */
+
+            height: 100vh;
+            background: #aaaaaa;
+        }
+        .layout-item:nth-child(1) {
+            background: #aaffaa;
+        }
+        .layout-item:nth-child(2) {
+            background: chartreuse;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="item">
+        <p>AAAAAAAAAAAAAAAAAA</p>
+        <p>AAAAAAAAAAAAAAAAAA</p>
+        <p>AAAAAAAAAAAAAAAAAA</p>
+    </div>
+    <div class="item">
+        <img src="img/little%20sister.webp" alt="bioshock">
+        <p>BBBBBBBBBBBBBBBBBB</p>
+        <p>BBBBBBBBBBBBBBBBBB</p>
+    </div>
+    <div class="item">
+        <p>CCCCCCCCCC</p>
+    </div>
+</div>
+
+
+<div class="layout">
+    <div class="layout-item">
+        <p>AAAAAAAAAAAAAAAAAA</p>
+        <p>AAAAAAAAAAAAAAAAAA</p>
+        <p>AAAAAAAAAAAAAAAAAA</p>
+    </div>
+    <div class="layout-item">
+        <img src="img/little%20sister.webp" alt="bioshock">
+        <p>BBBBBBBBBBBBBBBBBB</p>
+        <p>BBBBBBBBBBBBBBBBBB</p>
+    </div>
+</div>
+
+
+</body>
+</html>
