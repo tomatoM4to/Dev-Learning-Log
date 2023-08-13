@@ -25,6 +25,16 @@ module.exports = {
             directory: path.join(__dirname, 'dist'),
         },
         port: 8080,
+    },
+
+    module: {
+        rules: [
+            {
+                // 확장자가 css일때 use를 사용한다, use는 뒤에서부터 적용된다, ex-> css-loader > style-loader
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
     }
 };
 
