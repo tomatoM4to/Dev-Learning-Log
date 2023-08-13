@@ -1,3 +1,3 @@
 import {hello} from "./utils";
 
-console.log(hello('hello bundler'));
+document.querySelector("#root").innerHTML = hello("Bundler test")
