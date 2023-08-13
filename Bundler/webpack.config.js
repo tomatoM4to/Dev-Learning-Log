@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     // 시작 파일
@@ -19,9 +19,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html'),
         }),
-        new MiniCssExtractPlugin({
-            filename: 'common.css',
-        })
     ],
 
     devServer: {
@@ -36,7 +33,7 @@ module.exports = {
             {
                 // 확장자가 css일때 use를 사용한다, use는 뒤에서부터 적용된다, ex-> css-loader > style-loader
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'style-loader', 'css-loader']
+                use: ['style-loader', 'css-loader']
             }
         ]
     }
