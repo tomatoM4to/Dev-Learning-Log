@@ -20,8 +20,8 @@
   * 보통 함수 형태로 제공 된다.
   * 시스템 라이브러리 = System Call Interface
 
-![컴퓨터 시스템의 구성](../img/OS/컴퓨터 시스템의 구성.png)
-![컴퓨터 시스템의 구성 2](../img/OS/컴퓨터 시스템의 구성 2.png)
+![컴퓨터 시스템의 구성](../img/OS/개요/컴퓨터%20시스템의%20구성.png)
+![컴퓨터 시스템의 구성 2](../img/OS/개요/컴퓨터%20시스템의%20구성%202.png)
 ***
 
 # 운영체제의 구분
@@ -154,7 +154,7 @@
 * 작업의 종류
   * Hard real-time task
     * 시간 제약을 지키지 못하는 경우 시스템에 치명적 영향 <span style="color: green">// ex) 원자력 발전소 제어, 무기 제어 등
-  * Soft real-time task 
+  * Soft real-time task
     * 큰 문제를 일이키지 않는 경우 <span style="color: green">// ex) 1초에 30장의 그림을 그려야 하는 동영상 서비스
   * Non real-time task
 
