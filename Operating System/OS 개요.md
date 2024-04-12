@@ -1,3 +1,6 @@
+# OS
+* 컴퓨터 시스템 자원 (HW) 를 효율적으로 관리 해서 사용자 또는 응용 프로그램에게 서비스를 제공하는 프로그램
+
 # 운영체제의 역할
 ## User Interface (편리성)
 * CUI (Character user interface)
@@ -16,7 +19,9 @@
 
 # 컴퓨터 시스템의 구성
 * Kernel: 운영체제의 핵심
-* System Call Interface: 커널이 제공하는 기능 중 사용자가 사용할수 있는 기능들 or 사용자가 커널에 바로 접근하는것을 막고 허용된 접근만 허용하는 통로
+* System Call Interface
+  * 커널이 제공하는 기능 중 사용자가 사용할수 있는 기능들
+  * 사용자가 커널에 바로 접근하는것을 막고 허용된 접근만 허용하는 통로
   * 보통 함수 형태로 제공 된다.
   * 시스템 라이브러리 = System Call Interface
 
@@ -25,30 +30,33 @@
 ***
 
 # 운영체제의 구분
-## 동시 사용자 (Single-user system)
+## 동시 사용자 수
+### 단일 사용자 (Single-user system)
 * 한 명의 사용자만 시스템 사용 가능
   * 한 명의 사용자가 모든 시스템 자원 독점
   * 자원관리 및 시스템 보호 방식이 간단 함
 * 개인용 장비 (PC, mobile) 등에 사용
   * Windows, android, MS_DOS 등
 
-## 다중 사용자 (Multi-user system)
+### 다중 사용자 (Multi-user system)
 * 동시에 여러 사용자들이 시스템 사용
   * 각종 시스템 자원(파일 등)들에 대한 소유 권한 관리 필요
   * 기본적으로 Multi-tasking 기능 필요
   * os의 기능 및 구조가 복잡
-* <span style="color: pink">서버, 클러스터(cluster)장비 등에 사용
+* <span style="color: pink">서버, 클러스터(cluster)장비 등에 사용</span>
   * 호스트들이 연결된 서버 컴퓨터 시스템
   * Unix, Linux, Windows server 등
 
 ## 동시 실행 프로세스 수
-* 단일 작업 (Single-tasking system)
+### 단일 작업 (Single-tasking system)
   * 시스템 내에 하나의 작업(프로세스)만 존재
-    * 하나의 프로그램 실행을 마친 뒤에 다른 프로그램의 실행
+    * 여러개의 프로세스를 실행시키고 싶으면 1번 프로세스를 종료 후 2번 프로세스를 실행시켜야 하는 형태
+      * 요즘 찾기 힘든 형태다
+    * cmd가 어떻게 작동 방식과 유사
   * 운영체제의 구조가 간단
   * 예) MS-DOS
 
-* 다중 작업 (Multi-tasking system)
+### 다중 작업 (Multi-tasking system)
   * 동시에 여러 작업(프로세스)의 수행 가능
     * 작업들 사이의 동시 수행, 동기화 등을 관리해아 함
   * 운영체제의 기능 및 구조가 복잡
@@ -61,7 +69,7 @@
   * 컴퓨터에 필요한 모든 작업 프로그램에 포함
     * 명령어 저장 방법, 계산 대상, 결과 저장 위치와 방법, 출력 시점, 위치 등
 * 실행하는 작업 별 순차 처리 필요
-  * 각각의 작업을 하기 전 준비시간이 서요 된다. <span style="color: green">// 1번 프로그램 준비 → 1번 프로그램 실행 → 2번 프로그램 준비 → 2번 플로그램 실행 → 준비...
+  * 각각의 작업을 하기 전 준비시간이 소요 된다. <span style="color: green">// 1번 프로그램 준비 → 1번 프로그램 실행 → 2번 프로그램 준비 → 2번 플로그램 실행 → 준비...</span>
 
 ![OS역사, 순차 처리](../img/OS/OS%20역사%20순차처리.png)
 
@@ -70,26 +78,28 @@
 * 사용자의 요청 작업(천공 카드 등)을 일정시간 모아 두었다가 한번에 처리
   * 1번 프로그램에 대한 유형을 100개정도 모아두었다 한번에 일괄 처리
 #### 장점
-  * 많은 사용자가 시스템 자원 공유
-  * 처리 효율 (throughput) 향상
+* 많은 사용자가 시스템 자원 공유
+* 처리 효율 (throughput) 향상
 #### 단점
-  * 생산성 (productivity) 저하
-    * 같은 유형의 작업들이 모이기를 기다려야 한다.
-  * 긴 응답시간 (turnaround time)
-    * 작업 제출에서 결과 출력까지의 시간이 약 6시간 걸린다고 한다.
+* 생산성 (productivity) 저하
+  * 같은 유형의 작업들이 모이기를 기다려야 한다.
+* 긴 응답시간 (turnaround time)
+  * 작업 제출에서 결과 출력까지의 시간이 약 6시간 걸린다고 한다.
 * 시스템 지향적 (Ststem-oriented) 이다.
 
-![Batch System](../img/OS/Batch System.png)
+![Batch System](../img/OS/Batch%20System.png)
 
 ### Time Sharing System (1960s ~ 1970s)
-* 여러 사용자가 자원을 동시에 사용
+* 현대 일반적인 사용자가 사용하는 시스템
+  * A프로그램 조금 실행 > B프로그램 조금 실행 > C프로그램 조금 실행 ...
+* 여러 사용자가 자원을 동시에 사용 가능
   * 이 시기부터 파일 시스템 및 가상 메모리 관리 라는 개념이 생겼다.
 * 사용자 지향석 (User-oriented)
   * 대화형 (conversational, interactive) 시스템
-  * 단말기 (CRT terminal) 사용
+  * 초기에는 단말기 (CRT terminal)를 사용
     * 단말기에 HW가 있는것은 아니고 메인 컴퓨터에 접속해서 입력과 출력을 도와주는 역할을 한다.
 #### 장점
-* 응답시간 (response time) 단축 (약 5초)
+* 응답시간 (response time) 단축
 * 생산성 (productivity) 향상
   * CPU 활용률 (utilization)이 증가
 
@@ -99,11 +109,11 @@
 * 개인 사용자 체감 속도 저하
   * 사용자 수가 많아지면서 시스템 부하가 돼고 개인이 체감하는 속도가 느려진 경향이 있다.
 
-![time sharing system 1](../img/OS/time sharing system 1.png)
-![time sharing system 2](../img/OS/time sharing system 2.png)
+![time sharing system 1](../img/OS/time%20sharing%20system%201.png)
+![time sharing system 2](../img/OS/time%20sharing%20system%202.png)
 
 ### Personal Computing
-* 개인이 시스템 전체 독점
+* 개인이 시스템 전체 독점 ex) Window
 * CPU 활용률 (utilization)이 고려의 대상이 아님
   * 일반적인 사용자가 얼마나 편하게 시스템을 사용하느냐가 더 중요한 고려 요소
   * 일반적인 윈도우의 CPU 사용량 생각
@@ -121,13 +131,13 @@
   * 동시에 둘 이상의 프로세스 지원
   * 일반적으로 서버용으로 사용
   * 일반적인 환경에서 비슷하게 만든것이 멀티코어 CPU
-* 메모리 등의 자원 공유 (Tightly-coupled system)
+* 프로세서들이 메모리, 주변장치 같은 자원 공유 (Tightly-coupled system)
 * 사용 목적
   * 성능 향상
   * 신뢰성 향상 (하나가 고장나도 정상 동작 가능)
 * 프로세서 간 관계 및 역할 관리가 필요하다.
 
-![Parallel Processing System](../img/OS/Parallel Processing System.png)
+![Parallel Processing System](../img/OS/Parallel%20Processing%20System.png)
 
 ### Distributed Processing System
 * 네트워크를 기반으로 구축된 병렬처리 시스템 (Loosely-coupled system)
@@ -145,8 +155,8 @@
 #### 단점
 * 구축 및 관리가 어렵다.
 
-![Distributed Processing System 1](../img/OS/Distributed Processing System 1.png)
-![Distributed Processing System 2](../img/OS/Distributed Processing System 2.png)
+![Distributed Processing System 1](../img/OS/Distributed%20Processing System%201.png)
+![Distributed Processing System 2](../img/OS/Distributed%20Processing System%202.png)
 
 ### Real-time System (다른 관점으로 보는 System)
 * 작업 처리에 제한 시간 (deadline)을 갖는 시스템
