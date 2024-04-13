@@ -1,28 +1,67 @@
-# Process
-## Process or Job vs Program
-### Program or Job
+# Process or Job vs Program
+* 이들중 하나씩 제대로 알면 된다.
+## Program or Job
 * 프로그래머가 C, C++, JAVA 같은 언어로 작성한 텍스트 파일들
+    * 해당 파일들은 디스크에 보관되어 있는 상태
+    * 컴퓨터 시스템에 실행 요청 전의 상태
 * 프로그래머가 만든 프로그램들 뿐만 아니라, 운영체제가 컴퓨터 운영에 필요하여 만든 프로그램들도 포함하고 이들을 시스템 프로그램이라 명칭한다.
     * 해당 시스템 프로그램은 특별한 권한(privilege)를 부여받게 되지만, 일반 프로그램과 똑같이 운영체제 내부에서는 하나의 프로세스 구조체로서 간주되며 수행이 통제되게 된다.
-    * ex) init, getty, login, swapper...
+        * ex) init, getty, login, swapper...
 
 
 
 ### Process
 * 프로그래머가 만든 프로그램이 Processer에 의하여 수행되는 상태, 즉 활성화 되어 동작하는 상태
+* 실행을 위해 시스템(커널)에 등록된 Job or Program
+    * 시스템 성능 향상을 위해 커널에 의해 관리 된다.
+* 프로세스 관리 블록(PCB)을 할당받은 개체
+* 실행 중에 각종 자원을 요구, 할당, 반납하며 진행하는 능동적인 개체(active entity)
+
+* Youtube only
+#### 프로세스의 종류
+|구분|종류|설명|
+|--|--|--|
+|역할|시스템(커널) 프로세스|모든 시스템 메모리와 프로세서의 명령에 액세스 할 수 있는 프로세스, 프로세스 실행 순서를 제어하거나 다른 사용자 및 커널(운영체제) 영역을 침범하지 못하게 감시하고, 사용자 프로세스를 생성하는 기능을 한다.|
+|역할|사용자 프로세스|사용자 코드를 수행하는 프로세스|
+병행 수행 방법|독립 프로세스|다른 프로세스에 영향을 주지 않거나 다른 프로세스의 영향을 받지 않으면서 수행하는 병행 프로세스 이다.|
+병행 수행 방법|협력 프로세스|다른 프로세스에 영향을 주거나 다른 프로세스에서 영향을 받는 병행 프로세스이다.|
 
 ***
 
-## Process structure
-* 운영체제에서는 프로세스들에 대한 정보를 한곳에 모아 구조체(struct proc {.....})를 생성하여
-프로세스를 관리한다.
-* 운영체제는 이 구조체를 기반으로 프로세스가 생성하여 종료될 때까지
-프로세스 생애를 관리한다.
-* 운영체제 마다 차이는 있지만 공통적인 항복들이 있다.
+* Youtube only
+# 자원(Resource)의 개념
+* 커널에 관리 하에 프로세스에게 할당/반납 되는 수동적 개체(passive entity)
+## 자원의 분류
+### H/W resources
+* Processor, memory, disk, monitor, keyboard, Etc.
+### S/W resources
+* Message, signal, files, installed SWs, Etc.
+
+***
+
+* TODO: if PCB == Process structure ?
+# Process structure, PCB
+* OS는 Process 생성시 Process 대한 정보를 한곳에 모아 구조체(struct proc {.....})를 생성하여
+Process를 관리하고 이를 PCB(process control block) 하고 지칭한다.
+* OS는 이 PCB를 기반으로 프로세스가 생성하여 종료될 때까지
+Process 생애를 관리한다.
+
+## PCB가 관리하는 정보
+* **Process ID:** Process 고유 식별 번호
+* **스케줄링 정보:** 프로세스 우선순위 등과 같은 스케줄링 관련 정보들
+* **프로세스 상태:** 자원 할당, 요청 정보 등
+* **메모리 관리 정보:** Page table, segment table 등
+* **입출력 상태 정보:** 할당 받은 입출력 장치, 파일 등에 대한 정보 등
+* **문맥 저장 영역(context save area):** 프로세스의 레지스터 상태를 저장하는 공간 등
+* **계정 정보:** 자원 사용 시간 등을 관리
+
+* OS 마다 차이는 있지만 공통적인 항목들도 있다.
     * Process ID, name, Parent Process 정보, 자식 프로세스 정보, 사용 메모리 정보...
-* 이들 정보들을 담아서
-하나의 처리 단위로 모아놓은 것을 프로세스 제어블록(process control block) 이고, PCB 라고
-일반적으로 지칭된다.
+
+![Process Control Block](../../img/OS/Process/PCB.png)
+
+
+***
 
 
 ## 프로세스 구조와 동작
