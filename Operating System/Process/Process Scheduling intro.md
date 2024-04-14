@@ -99,6 +99,12 @@
 * 실행중인 프로세스의 context를 저장하고, 앞으로 실행 할 프로세스의 context를 복구 하는 일
     * 커널의 개입으로 이루어진다.
 
+## 퀀텀(Quntom)
+* 문맥교환 에서 CPU를 할당한 시간
+
+
+***
+
 # Context Switch Overhead
 * Context Switching에 소요되는 비용
 * OS의 성능에 큰 영향을 준다.
