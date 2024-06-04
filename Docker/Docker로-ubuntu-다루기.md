@@ -1,1 +1,18 @@
-# Docker를 통해 마치 다른 OS처럼 사용 가능하지만, 컨테이너는 가상 서버가 아닌 Docker에 의해 생성된 Linux의 네임스페이스 라는것을 명심
+# Ubuntu:20.04
+
+**Docker를 통해 마치 다른 OS처럼 사용 가능하지만, 컨테이너는 가상 서버가 아닌 Docker에 의해 생성된 Linux의 네임스페이스 라는것을 명심**
+
+이전에 사용한 Nginx 컨테이너는 시작하면 Nginx가 실행되지만, Ubuntu 컨테이너는 시작하면 bash를 조작할 수 있습니다.
+
+bash와 같은 상호작용이 필요한 경우 호스트 머신의 터미널 입력을 받기 위해 `--interactive` 옵션과 컨테이너의 가상 출력 장소를 만들기 위해 `--tty` 옵션이 필요합니다.
+
+```shell
+docker container run --interactive --tty ubuntu:20.04
+```
+Docker 뿐만 아니라 Linux 명령의 옵션은 `--help` or `-h`, `--version` or `-v` 처럼 동일한 옵션을 짧게 지정할 수 있습니다.
+
+짧은 옵션은 여러개 연속해서 지정할 수 있으며, 다음과 같이 최소한의 명령어로 실행 할 수 있습니다.
+```shell
+docker run -it ubuntu:20.04
+```
+
