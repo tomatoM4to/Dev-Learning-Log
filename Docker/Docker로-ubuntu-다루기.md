@@ -4,7 +4,7 @@
 
 이전에 사용한 Nginx 컨테이너는 시작하면 Nginx가 실행되지만, Ubuntu 컨테이너는 시작하면 bash를 조작할 수 있습니다.
 
-bash와 같은 상호작용이 필요한 경우 호스트 머신의 터미널 입력을 받기 위해 `--interactive` 옵션과 컨테이너의 가상 출력 장소를 만들기 위해 `--tty` 옵션이 필요합니다.
+bash와 같은 상호작용이 필요한 경우 **호스트 머신의 터미널 입력**을 받기 위해 `--interactive` 옵션과 **컨테이너의 가상 출력** 장소를 만들기 위해 `--tty` 옵션이 필요합니다.
 
 ```shell
 docker container run --interactive --tty ubuntu:20.04
